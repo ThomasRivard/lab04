@@ -6,7 +6,7 @@ function afficherMenu() {
 <nav>
     <ul>
         <li><a href="?page=fibonacci">Fibonacci</a></li>
-        <li><a href="?page=fizbuzz">FizzBuzz</a></li>
+        <li><a href="?page=fizzbuzz">FizzBuzz</a></li>
         <li><a href="?page=etoiles">Étoiles</a></li>
         <li><a href="?page=citations">Citations</a></li>
         <li><a href="?page=calculs">Calculs</a></li>

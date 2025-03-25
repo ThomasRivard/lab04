@@ -42,7 +42,7 @@ if (isset($_GET['deconnecter'])) {
             case 'fibonacci':
                 require('pages/fibonacci.php');
                 break;
-            case 'fizbuzz':
+            case 'fizzbuzz':
                 require('pages/fizzbuzz.php');
                 break;
             case 'etoiles':

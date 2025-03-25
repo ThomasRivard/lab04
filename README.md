@@ -84,7 +84,7 @@ Plutôt que faire pointer chaque lien vers un fichier PHP différent, vous lui f
 | Lien                        | Cible                         |
 |-----------------------------|-------------------------------|
 | Fibonacci                   | `?page=fibonacci`             |
-| FizzBuzz                    | `?page=fizbuzz`               |
+| FizzBuzz                    | `?page=fizzbuzz`              |
 | Étoiles                     | `?page=etoiles`               |
 | Citations                   | `?page=citations`             |
 | Calculs                     | `?page=calculs`               |
