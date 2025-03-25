@@ -152,6 +152,8 @@ Ajoutez ensuite une inclusion de `fonctions/validation.php` dans le fichier `pag
 
 * Appeler `afficherFormulaire` avec la valeur maximale `50` et la valeur par défaut `10`
 
+> N'hésitez pas à réutiliser votre fonction `validerNombreEntier` dans les autres étapes du laboratoire!
+
 ## 3 - FizzBuzz
 
 Ouvrez le fichier `pages/fizzbuzz.php`.
@@ -162,7 +164,7 @@ Créez aussi une fonction `afficherFormulaire` qui affiche le formulaire ci-dess
 
 ![](images-readme/formulaire-fizzbuzz.png)
 
-Utilisez ensuite ces fonctions pour produire le résultat ci-dessous. N'oubliez pas de valider les champs du formulaire. Les deux nombres doivent être compris entre 1 et 1000, et la valeur « De » doit être inférieure à la valeur « À ».
+Utilisez ensuite ces fonctions pour produire le résultat ci-dessous. N'oubliez pas de valider les champs du formulaire. Les deux nombres doivent être entiers, être compris entre 1 et 1000, et la valeur « De » doit être inférieure à la valeur « À ».
 
 ![](images-readme/demo-fizzbuzz.gif)
 
@@ -230,6 +232,8 @@ Voici le résultat attendu:
 
 ![](images-readme/demo-etoiles.gif)
 
+N'oubliez pas de valider les champs du formulaire.
+
 ## 5 - Citations
 
 Dans le fichier `pages/citations.php`, créez une fonction qui retourne une citation au hasard. Utilisez cette fonction pour créer une page semblable à celle-ci:
@@ -278,10 +282,11 @@ function traiterFormulaire($textarea) {
 }
 ```
 
-Assurez-vous de bien comprendre le code de la fonction `traiterFormulaire`. La fonction `explode`, qu'elle utilise, permet de convertir une chaîne de caractères en tableau de chaînes de caractères en fonction d'un séparateur. Dans le code ci-dessus, le séparateur est `\n`, c'est-à-dire le saut de ligne. Chacune des valeurs qui ont ét.é saisies dans le `textarea` et séparées par des sauts de ligne deviendra donc un élément distinct du tableau `$nombres`.
+Assurez-vous de bien comprendre le code de la fonction `traiterFormulaire`. La fonction `explode`, qu'elle utilise, permet de convertir une chaîne de caractères en tableau de chaînes de caractères en fonction d'un séparateur. Dans le code ci-dessus, le séparateur est `\n`, c'est-à-dire le saut de ligne. Chacune des valeurs qui ont été saisies dans le `textarea` et séparées par des sauts de ligne deviendra donc un élément distinct du tableau `$nombres`.
 
 Passez le résultat de `traiterFormulaire` à vos fonctions `calculerSomme` et `calculerMoyenne` afin d'obtenir la somme et la moyenne des nombres saisis.
 
 Voici le résultat attendu:
 
 ![](images-readme/demo-calculs.gif)
+
