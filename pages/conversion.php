@@ -48,7 +48,7 @@ function afficherFormulaire() {
 
 if (
     isset($_POST['valeur']) && isset($_POST['conversion'])
-    && validerNombreDecimal($_POST['valeur'], 0, 1000000)
+    && validerNombre($_POST['valeur'], 0, 1000000)
     && validerValeurChoix($_POST['conversion'], ['kgToLb', 'lbToKg', 'cmToInches', 'inchesToCm'])
 ) {
     $valeur = $_POST['valeur'];
