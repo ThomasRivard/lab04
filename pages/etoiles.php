@@ -18,7 +18,7 @@ require_once('fonctions/validation.php');
 
 <?php
 
-function escalierCroissantGauche($nombreLignes) {
+function triangleHautGauche($nombreLignes) {
     $resultat = "";
     for ($i = 1; $i <= $nombreLignes; $i++) {
         for ($j = $nombreLignes; $j >= 1; $j--) {
@@ -29,7 +29,7 @@ function escalierCroissantGauche($nombreLignes) {
     return $resultat;
 }
 
-function escalierCroissantDroit($nombreLignes) {
+function triangleHautDroite($nombreLignes) {
     $resultat = "";
     for ($i = 1; $i <= $nombreLignes; $i++) {
         for ($j = 1; $j <= $i; $j++) {
@@ -40,7 +40,7 @@ function escalierCroissantDroit($nombreLignes) {
     return $resultat;
 }
 
-function escalierDecroissantGauche($nombreLignes) {
+function triangleBasGauche($nombreLignes) {
     $resultat = "";
     for ($i = $nombreLignes; $i >= 1; $i--) {
         for ($j = $nombreLignes; $j >= 1; $j--) {
@@ -51,7 +51,7 @@ function escalierDecroissantGauche($nombreLignes) {
     return $resultat;
 }
 
-function escalierDecroissantDroit($nombreLignes) {
+function triangleBasDroite($nombreLignes) {
     $resultat = "";
     for ($i = $nombreLignes; $i >= 1; $i--) {
         for ($j = 1; $j <= $i; $j++) {
@@ -62,23 +62,23 @@ function escalierDecroissantDroit($nombreLignes) {
     return $resultat;
 }
 
-function afficherEscaliers($nombreLignes) {
+function afficherMotif($nombreLignes) {
 ?>
     <table>
         <tr>
             <td>
-                <?= escalierCroissantGauche($nombreLignes) ?>
+                <?= triangleHautGauche($nombreLignes) ?>
             </td>
             <td>
-                <?= escalierCroissantDroit($nombreLignes) ?>
+                <?= triangleHautDroite($nombreLignes) ?>
             </td>        
         </tr>
         <tr>
             <td>
-                <?= escalierDecroissantGauche($nombreLignes) ?>
+                <?= triangleBasGauche($nombreLignes) ?>
             </td>
             <td>
-                <?= escalierDecroissantDroit($nombreLignes) ?>
+                <?= triangleBasDroite($nombreLignes) ?>
             </td>
         </tr>
     </table>
@@ -88,7 +88,7 @@ function afficherEscaliers($nombreLignes) {
 function afficherFormulaire() {
 ?>
     <form method="post">
-    <label for="nombreLignes">Nombre de lignes par escalier:</label>
+    <label for="nombreLignes">Hauteur de chaque triangle:</label>
     <input type="number" name="nombreLignes" id="nombreLignes" required>
     <button type="submit">Afficher</button>
 <?php
@@ -101,9 +101,9 @@ function afficherFormulaire() {
 <?php
 
 if (isset($_POST['nombreLignes']) && validerNombreEntier($_POST['nombreLignes'], 1, 20)) {
-    afficherEscaliers($_POST['nombreLignes']);
+    afficherMotif($_POST['nombreLignes']);
 } else {
-    afficherEscaliers(5);
+    afficherMotif(5);
 }
 
 afficherFormulaire();

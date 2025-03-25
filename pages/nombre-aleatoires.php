@@ -1,6 +1,7 @@
 <?php
 
 require_once('fonctions/validation.php');
+require_once('fonctions/afficherListe.php');
 
 function genererNombresAleatoires($min, $max, $quantite) {
     $nombres = [];
@@ -18,7 +19,7 @@ if (
     && validerNombreEntier($_POST['quantite'], 1, 100)
 ) {
     $nombres = genererNombresAleatoires($_POST['min'], $_POST['max'], $_POST['quantite']);
-    afficherNombres($nombres);
+    afficherListe('ul', $nombres);
 }
 
 ?>

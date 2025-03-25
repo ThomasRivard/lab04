@@ -1,7 +1,7 @@
 <?php
 
 include('fonctions/validation.php');
-include('fonctions/afficherNombres.php');
+include('fonctions/afficherListe.php');
 
 function filtrerModulo($nombres, $modulo, $resultatModulo) {
     $nouveauxNombres = [];
@@ -52,18 +52,29 @@ if (
     && validerValeurChoix($_POST['pairOuImpair'], ['pair', 'impair'])
 ) {
     $nombres = traiterFormulaire($_POST['nombres'], $_POST['pairOuImpair']);
-    afficherNombres($nombres);
+    afficherListe('ul', $nombres);
 }
 
 ?>
 
 <form method="post">
     <label for="nombres">Nombres:</label>
-    <textarea name="nombres" id="nombres" rows="10" cols="30"><?php echo isset($_POST['nombres']) ? $_POST['nombres'] : ''; ?></textarea>
-    <label for="pairOuImpair">Pair ou impair:</label>
-    <select name="pairOuImpair" id="pairOuImpair">
-        <option value="pair" <?php echo isset($_POST['pairOuImpair']) && $_POST['pairOuImpair'] == 'pair' ? 'selected' : ''; ?>>Pair</option>
-        <option value="impair" <?php echo isset($_POST['pairOuImpair']) && $_POST['pairOuImpair'] == 'impair' ? 'selected' : ''; ?>>Impair</option>
-    </select>
+    <textarea name="nombres" rows="10" cols="30"><?php echo isset($_POST['nombres']) ? $_POST['nombres'] : ''; ?></textarea>
+    <input
+        type="radio"
+        name="pairOuImpair"
+        value="pair"
+        <?php echo isset($_POST['pairOuImpair']) && $_POST['pairOuImpair'] == 'pair' ? 'checked' : ''; 
+    ?>>
+    <label for="pair">Pair</label>
+    <input
+        type="radio"
+        id="impair"
+        name="pairOuImpair"
+        value="impair"
+        <?php echo isset($_POST['pairOuImpair']) && $_POST['pairOuImpair'] == 'impair' ? 'checked' : ''; ?>
+    >
+    <label for="impair">Impair</label>
+    <br>
     <button type="submit">Soumettre</button>
 </form>
