@@ -34,7 +34,7 @@ function construireCalendrier($mois, $annee) {
     return $calendrier;
 }
 
-// Configurer la locale pour les noms de mois en français
+// Configurer la localisation pour les noms de mois en français
 setlocale(LC_TIME, 'fr_FR.UTF-8');
 
 $mois = isset($_GET['mois']) ? (int)$_GET['mois'] : date('n');
