@@ -10,14 +10,6 @@ function genererNombresAleatoires($min, $max, $quantite) {
     return $nombres;
 }
 
-function afficherNombres($nombres) {
-    echo '<ul>';
-    foreach ($nombres as $nombre) {
-        echo "<li>$nombre</li>";
-    }
-    echo '</ul>';
-}
-
 if (
     isset($_POST['min']) && isset($_POST['max']) && isset($_POST['quantite'])
     && validerNombreEntier($_POST['min'], 0, 1000000)
