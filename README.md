@@ -321,6 +321,8 @@ function validerValeurChoix($valeur, $choixPossibles) {
 
 Cette fonction prend en paramètre la valeur à valider et un tableau contenant les choix possibles, et retourne `true` si la valeur se trouve parmi ces choix.
 
+## Suite du laboratoire
+
 <strong>
 Consignes à venir pour les étapes restantes du laboratoire:
 
