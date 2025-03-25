@@ -93,3 +93,7 @@ Plutôt que faire pointer chaque lien vers un fichier PHP différent, vous lui f
 | Filtre                      | `?page=filtre`                |
 | Tri                         | `?page=tri`                   |
 | Calendrier                  | `?page=calendrier`            |
+
+Encore une fois, vous ne devez rien modifier dans le fichier `index.php`. Si vous implémentez la fonction `afficherMenu` correctement, le menu apparaîtra sur la page d'accueil.
+
+### 1.3 - Chargement de la bonne page

@@ -39,6 +39,40 @@ if (isset($_GET['deconnecter'])) {
         afficherFormulaireAuthentification();
     } else if (isset($_GET['page'])) {
         /****** AJOUTEZ LE SWITCH CI-DESSOUS *******/
+        switch (isset($_GET['page'])) {
+            case 'fibonacci':
+                require('pages/fibonacci.php');
+                break;
+            case 'fizbuzz':
+                require('pages/fizzbuzz.php');
+                break;
+            case 'etoiles':
+                require('pages/etoiles.php');
+                break;
+            case 'diction':
+                require('pages/diction.php');
+                break;
+            case 'calculs':
+                require('pages/calculs.php');
+                break;
+            case 'conversion':
+                require('pages/conversion.php');
+                break;
+            case 'nombre-aleatoires':
+                require('pages/nombre-aleatoires.php');
+                break;
+            case 'filtre':
+                require('pages/filtre.php');
+                break;
+            case 'tri':
+                require('pages/tri.php');
+                break;
+            case 'calendrier':
+                require('pages/calendrier.php');
+                break;
+            default:
+                echo '<p>ERREUR: Page inexistante.</p>';
+        }
     } else {
         afficherMenu();
     }
