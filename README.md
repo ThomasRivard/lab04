@@ -112,7 +112,7 @@ Voici le comportement attendu une fois que votre `switch` sera entièrement fonc
 
 ![](images-readme/demo-switch.gif)
 
-### 1.4 - Fibonacci
+## 2 - Fibonacci
 
 Ouvrez le fichier `pages/fibonacci.php`.
 
@@ -149,3 +149,5 @@ Ajoutez ensuite une inclusion de `fonctions/validation.php` dans le fichier `pag
 * SINON:
 
     * Appeler `afficherFibonacci` en lui passant `10`
+
+## 3 - FizzBuzz
