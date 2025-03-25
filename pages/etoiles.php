@@ -5,6 +5,9 @@ require_once('fonctions/validation.php');
 ?>
 
 <style>
+    hr ~ * {
+        font-family: monospace;
+    }
     table, tr, td {
         border: none;
         padding: 0;
@@ -12,7 +15,6 @@ require_once('fonctions/validation.php');
         width: auto;
         height: auto;
         background-color: transparent !important;
-        font-family: monospace;
     }
 </style>
 
@@ -85,11 +87,11 @@ function afficherMotif($nombreLignes) {
 <?php
 }
 
-function afficherFormulaire() {
+function afficherFormulaire($valeurParDefaut) {
 ?>
     <form method="post">
     <label for="nombreLignes">Hauteur de chaque triangle:</label>
-    <input type="number" name="nombreLignes" id="nombreLignes" required>
+    <input type="number" name="nombreLignes" id="nombreLignes" value="<?= $valeurParDefaut ?>" required>
     <button type="submit">Afficher</button>
 <?php
 }
@@ -100,12 +102,9 @@ function afficherFormulaire() {
 
 <?php
 
-if (isset($_POST['nombreLignes']) && validerNombreEntier($_POST['nombreLignes'], 1, 20)) {
-    afficherMotif($_POST['nombreLignes']);
-} else {
-    afficherMotif(5);
-}
+$nombreLignes = isset($_POST['nombreLignes']) && validerNombreEntier($_POST['nombreLignes'], 1, 20) ? $_POST['nombreLignes'] : 5;
 
-afficherFormulaire();
+afficherMotif($nombreLignes);
+afficherFormulaire($nombreLignes);
 
 ?>

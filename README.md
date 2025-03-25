@@ -165,3 +165,67 @@ Créez aussi une fonction `afficherFormulaire` qui affiche le formulaire ci-dess
 Utilisez ensuite ces fonctions pour produire le résultat ci-dessous. N'oubliez pas de valider les champs du formulaire. Les deux nombres doivent être compris entre 1 et 1000, et la valeur « De » doit être inférieure à la valeur « À ».
 
 ![](images-readme/demo-fizzbuzz.gif)
+
+## 4 - Étoiles
+
+Dans le fichier `pages/etoiles.php`, vous devez créer les 6 fonctions suivantes:
+
+* `triangleHautGauche`
+* `triangleHautDroite`
+* `triangleBasGauche`
+* `triangleBasDroite`
+* `afficherMotif`
+* `afficherFormulaire`
+
+La fonction `triangleHautGauche` doit prendre en paramètre un nombre de lignes et **retourner** (et non afficher!) un triangle d'étoiles semblable à celui ci-dessous, selon le nombre de lignes (dans l'exemple, le nombre de lignes est de 5):
+
+```
+        * 
+      * * 
+    * * * 
+  * * * * 
+* * * * *
+```
+
+Les fonctions `triangleHautDroite`, `triangleBasGauche` et `triangleBasDroite` prennent le même paramètre et retournent respectivement des triangles semblables à ceux-ci:
+
+```
+*
+* *
+* * *
+* * * *
+* * * * * 
+```
+
+```
+* * * * * 
+  * * * * 
+    * * * 
+      * * 
+        *
+```
+
+```
+* * * * *
+* * * *
+* * *
+* *
+* 
+```
+
+La fonction `afficherMotif` prend en paramètre le nombre de lignes par triangle, et appelle les quatre fonctions ci-dessus pour **afficher** (et non retourner) les quatre triangles dans un tableau HTML de 2x2. La page contient déjà du CSS pour désactiver les bordures du tableau. Le résultat doit ressembler à ceci:
+
+![](images-readme/motif-etoiles.png)
+
+La fonction `afficherFormulaire` doit prendre en paramètre un nombre de lignes par défaut, et afficher le formulaire suivant (dans l'exemple, le nombre de lignes par défaut est 5):
+
+![](images-readme/formulaire-etoiles.png)
+
+La logique de la page doit appeler la fonction `afficherMotif` avec la bonne valeur de paramètre (soit le nombre saisi dans le formulaire, soit la valeur par défaut de 5), puis afficher le formulaire. Le formulaire doit utiliser comme valeur par défaut la valeur précédémment saisie, ou bien 5 si aucune valeur n'a été saisie.
+
+> Astuce: utilisez un opérateur ternaire pour appeler la fonction `afficherFormulaire` avec le bon paramètre, par exemple: `afficherFormulaire(isset($_POST['nombreLignes']) ? $_POST['nombreLignes'] : 5);
+`
+
+Voici le résultat attendu:
+
+![](images-readme/demo-etoiles.gif)
