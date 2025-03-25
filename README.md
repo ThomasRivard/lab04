@@ -150,4 +150,18 @@ Ajoutez ensuite une inclusion de `fonctions/validation.php` dans le fichier `pag
 
     * Appeler `afficherFibonacci` en lui passant `10`
 
+* Appeler `afficherFormulaire` avec la valeur maximale `50` et la valeur par défaut `10`
+
 ## 3 - FizzBuzz
+
+Ouvrez le fichier `pages/fizzbuzz.php`.
+
+Dans ce fichier, ajoutez une fonction `fizzBuzz` qui prend en paramètre deux nombres entiers et affiche dans une liste ordonnée (`ol`) les valeurs de FizzBuzz comprises entre ces deux nombres.
+
+Créez aussi une fonction `afficherFormulaire` qui affiche le formulaire ci-dessous :
+
+![](images-readme/formulaire-fizzbuzz.png)
+
+Utilisez ensuite ces fonctions pour produire le résultat ci-dessous. N'oubliez pas de valider les champs du formulaire. Les deux nombres doivent être compris entre 1 et 1000, et la valeur « De » doit être inférieure à la valeur « À ».
+
+![](images-readme/demo-fizzbuzz.gif)

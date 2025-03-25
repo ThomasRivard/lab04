@@ -41,9 +41,9 @@ if (
     isset($_POST['min'], $_POST['max'])
     && validerNombreEntier($_POST['min'], 1, 1000)
     && validerNombreEntier($_POST['max'], 1, 1000)
-    && $_POST['min'] <= $_POST['max']
+    && $_POST['min'] < $_POST['max']
 ) {
-        fizzBuzz($_POST['min'], $_POST['max']);
+    fizzBuzz($_POST['min'], $_POST['max']);
 }
 
 afficherFormulaire();
