@@ -111,3 +111,41 @@ Les fichiers à inclure se trouvent dans le dossier `pages`. Le cas `default` do
 Voici le comportement attendu une fois que votre `switch` sera entièrement fonctionnel:
 
 ![](images-readme/demo-switch.gif)
+
+### 1.4 - Fibonacci
+
+Ouvrez le fichier `pages/fibonacci.php`.
+
+Vous constaterez que celui-ci ne contient qu'une balise `<h1>`. Les balises HTML de base (`html`, `head` et `body`) ne sont pas présentes. C'est parce qu'on n'accède pas à ce fichier directement: il est inclus dans le `body` du fichier `index.php`. On inclut donc seulement les balises qui doivent apparaître dans ce dernier. Souvenez-vous qu'inclure une page revient à faire un copier-coller de son contenu.
+
+Dans ce fichier, ajoutez une fonction `afficherFibonacci` qui prend en paramètre le nombre de valeurs de la suite de Fibonacci à afficher. La fonction doit afficher ces valeurs dans une liste ordonnée (`ol`).
+
+Créez aussi une fonction `afficherFormulaire` qui affiche le formulaire ci-dessous:
+
+![](images-readme/formulaire-fibonacci.png)
+
+Cette fonction doit prendre en paramètre la valeur maximale à inclure dans la liste déroulante, ainsi qu'une valeur par défaut.
+
+Ajoutez ensuite la logique suivante pour générer le contenu de la page:
+
+* SI le champ de formulaire `nombre` a été reçu:
+
+    * Appeler `afficherFibonacci` en lui passant la valeur du champ `nombre`
+
+* SINON:
+
+    * Appeler `afficherFibonacci` en lui passant `10`
+
+* Appeler `afficherFormulaire` avec la valeur maximale `50` et la valeur par défaut `10`
+
+Il reste à valider le champ du formulaire. Pour ce faire, créez une fonction `validerNombreEntier` dans le fichier `fonctions/validation.php`. Cette fonction doit prendre en paramètre un nombre, une valeur minimale et une valeur maximale, et retourner `true` si le nombre est valide (est un nombre entier) et compris entre `min` et `max` inclusivement. Autrement, elle doit retourner `false`.
+
+Ajoutez ensuite une inclusion de `fonctions/validation.php` dans le fichier `pages/fibonacci.php`, et utilisez la fonction `validerNombreEntier` pour valider le champ du formulaire. Voici la logique mise à jour pour la page:
+
+* SI le champ de formulaire `nombre` a été reçu **et est un nombre entier compris entre 1 et 50**:
+
+    * Appeler `afficherFibonacci` en lui passant la valeur du champ `nombre`
+
+* SINON:
+
+    * Appeler `afficherFibonacci` en lui passant `10`
