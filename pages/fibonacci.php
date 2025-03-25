@@ -15,14 +15,15 @@ function afficherFibonacci($nombre) {
     echo '</ol>';
 }
 
-function afficherFormulaire($nombreMax) {
+function afficherFormulaire($nombreMax, $nombreDefaut) {
 ?>
     <form method="post" action="?page=fibonacci">
     <label for="nombre">Nombres à afficher:</label>
     <select name="nombre">
     <?php
         for ($i = 1; $i <= $nombreMax; $i++) {
-            echo '<option value="' . $i . '">' . $i . '</option>';
+            $selected = ($i == $nombreDefaut) ? ' selected' : '';
+            echo '<option value="' . $i . '"' . $selected . '>' . $i . '</option>';
         }
     ?>
     </select>
@@ -42,7 +43,6 @@ if (isset($_POST['nombre']) && (int)$_POST['nombre'] == $_POST['nombre']) {
     afficherFibonacci(10);
 }
 
-
-afficherFormulaire(50);
+afficherFormulaire(50, 10);
 
 ?>
