@@ -40,7 +40,7 @@ if (isset($_GET['deconnecter'])) {
     } else if (isset($_GET['page'])) {
         /****** AJOUTEZ LE SWITCH CI-DESSOUS *******/
     } else {
-        //afficherMenu();
+        afficherMenu();
     }
 
     ?>

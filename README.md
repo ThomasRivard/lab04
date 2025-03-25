@@ -70,3 +70,26 @@ Vous n'avez rien à modifier dans le fichier `index.php` pour le moment. Une foi
 ![](images-readme/demo-authentification.gif)
 
 Assurez-vous que vous obtenez bien les résultats ci-dessus avant de continuer.
+
+### 1.2 - Fonction d'affichage du menu
+
+Observez la structure conditionnelle dans le bas du fichier `index.php`. On peut y constater que si l'utilisateur est authentifié et que la variable `$_GET['page']` n'existe pas, alors la fonction `afficherMenu` est appelée.
+
+La fonction `afficherMenu` est définie dans le fichier `fonctions/menu.php`, mais est présentement vide. Vous devez lui ajouter le code nécessaire pour afficher le menu ci-dessous:
+
+![](images-readme/menu.png)
+
+Plutôt que faire pointer chaque lien vers un fichier PHP différent, vous lui ferez recharger la page courante avec une valeur différente du paramètre d'URL `page`. Voici donc la cible (`href`) à utiliser pour chaque lien:
+
+| Lien                        | Cible                          |
+|-----------------------------|--------------------------------|
+| Fibonacci                   | `?page=fibonacci`             |
+| FizzBuzz                    | `?page=fizbuzz`               |
+| Étoiles                     | `?page=etoiles`               |
+| Citations                   | `?page=diction`               |
+| Calculs                     | `?page=calculs`               |
+| Convertisseur de mesures    | `?page=conversion`            |
+| Nombres aléatoires          | `?page=nombre-aleatoires`     |
+| Filtre                      | `?page=filtre`                |
+| Tri                         | `?page=tri`                   |
+| Calendrier                  | `?page=calendrier`            |
