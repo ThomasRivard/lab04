@@ -7,4 +7,14 @@ function validerNombreEntier($valeur, $min, $max) {
         && $valeur <= $max;
 }
 
+function validerNombreDecimal($valeur, $min, $max) {
+    return is_numeric($valeur)
+        && $valeur >= $min
+        && $valeur <= $max;
+}
+
+function validerValeurChoix($valeur, $choixPossibles) {
+    return in_array($valeur, $choixPossibles);
+}
+
 ?>
