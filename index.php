@@ -26,12 +26,11 @@ if (isset($_GET['deconnecter'])) {
         $utilisateur = obtenirInfoUtilisateur();
         echo '<p>Vous êtes connecté(e) en tant que <strong>' . $utilisateur['prenom'] . ' ' . $utilisateur['nom'] . '</strong>.</p>';
         echo '<a href="?deconnecter">Se déconnecter</a>';
+        echo isset($_GET['page']) ? ' | <a href="?">Menu</a>' : '';
         echo '<hr />';
     }
 
     ?>
-
-    <h1>Laboratoire 04</h1>
 
     <?php
 
@@ -39,7 +38,7 @@ if (isset($_GET['deconnecter'])) {
         afficherFormulaireAuthentification();
     } else if (isset($_GET['page'])) {
         /****** AJOUTEZ LE SWITCH CI-DESSOUS *******/
-        switch (isset($_GET['page'])) {
+        switch ($_GET['page']) {
             case 'fibonacci':
                 require('pages/fibonacci.php');
                 break;
@@ -49,8 +48,8 @@ if (isset($_GET['deconnecter'])) {
             case 'etoiles':
                 require('pages/etoiles.php');
                 break;
-            case 'diction':
-                require('pages/diction.php');
+            case 'citations':
+                require('pages/citations.php');
                 break;
             case 'calculs':
                 require('pages/calculs.php');
@@ -74,6 +73,7 @@ if (isset($_GET['deconnecter'])) {
                 echo '<p>ERREUR: Page inexistante.</p>';
         }
     } else {
+        echo '<h1>Laboratoire 04</h1>';
         afficherMenu();
     }
 

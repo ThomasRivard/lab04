@@ -81,12 +81,12 @@ La fonction `afficherMenu` est définie dans le fichier `fonctions/menu.php`, ma
 
 Plutôt que faire pointer chaque lien vers un fichier PHP différent, vous lui ferez recharger la page courante avec une valeur différente du paramètre d'URL `page`. Voici donc la cible (`href`) à utiliser pour chaque lien:
 
-| Lien                        | Cible                          |
-|-----------------------------|--------------------------------|
+| Lien                        | Cible                         |
+|-----------------------------|-------------------------------|
 | Fibonacci                   | `?page=fibonacci`             |
 | FizzBuzz                    | `?page=fizbuzz`               |
 | Étoiles                     | `?page=etoiles`               |
-| Citations                   | `?page=diction`               |
+| Citations                   | `?page=citations`             |
 | Calculs                     | `?page=calculs`               |
 | Convertisseur de mesures    | `?page=conversion`            |
 | Nombres aléatoires          | `?page=nombre-aleatoires`     |

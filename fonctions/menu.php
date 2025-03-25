@@ -8,7 +8,7 @@ function afficherMenu() {
         <li><a href="?page=fibonacci">Fibonacci</a></li>
         <li><a href="?page=fizbuzz">FizzBuzz</a></li>
         <li><a href="?page=etoiles">Étoiles</a></li>
-        <li><a href="?page=diction">Citations</a></li>
+        <li><a href="?page=citations">Citations</a></li>
         <li><a href="?page=calculs">Calculs</a></li>
         <li><a href="?page=conversion">Convertisseur de mesures</a></li>
         <li><a href="?page=nombre-aleatoires">Nombres aléatoires</a></li>
