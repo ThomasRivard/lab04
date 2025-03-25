@@ -97,3 +97,17 @@ Plutôt que faire pointer chaque lien vers un fichier PHP différent, vous lui f
 Encore une fois, vous ne devez rien modifier dans le fichier `index.php`. Si vous implémentez la fonction `afficherMenu` correctement, le menu apparaîtra sur la page d'accueil.
 
 ### 1.3 - Chargement de la bonne page
+
+Dans le `else if` de la structure conditionnelle dans le bas du fichier `index.php`, vous trouverez le commentaire suivant:
+
+```php
+/****** AJOUTEZ LE SWITCH CI-DESSOUS *******/
+```
+
+Sous ce commentaire, vous devez créer la structure conditionnelle `switch` nécessaire pour **inclure** le bon fichier PHP selon la valeur de `$_GET['page']`. C'est ce qui permettra de faire fonctionner les liens du menu créé à l'étape précédente.
+
+Les fichiers à inclure se trouvent dans le dossier `pages`. Le cas `default` doit afficher le texte `ERREUR: Page inexistante.`.
+
+Voici le comportement attendu une fois que votre `switch` sera entièrement fonctionnel:
+
+![](images-readme/demo-switch.gif)
