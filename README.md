@@ -229,3 +229,30 @@ La logique de la page doit appeler la fonction `afficherMotif` avec la bonne val
 Voici le résultat attendu:
 
 ![](images-readme/demo-etoiles.gif)
+
+## 5 - Citations
+
+Dans le fichier `pages/citations.php`, créez une fonction qui retourne une citation au hasard. Utilisez cette fonction pour créer une page semblable à celle-ci:
+
+![](images-readme/demo-citations.gif)
+
+Pour rappel, voici comment récupérer une valeur au hasard dans un tableau:
+
+```php
+$tableau[array_rand($tableau)]
+```
+
+Voici un tableau de citations que vous pouvez utiliser dans votre fonction (gracieuseté d'une intelligence artificielle générative 😉):
+
+```php
+$citations = [
+    'La vie, c\'est comme une boîte de chocolats, on ne sait jamais sur quoi on va tomber. - Forrest Gump',
+    'Il n\'y a qu\'une façon d\'échouer, c\'est d\'abandonner avant d\'avoir réussi. - Olivier Lockert',
+    'La seule limite à notre épanouissement de demain sera nos doutes d\'aujourd\'hui. - Franklin D. Roosevelt',
+    'L\'imagination est plus importante que le savoir. - Albert Einstein',
+    'La meilleure façon de prédire l\'avenir est de le créer. - Peter Drucker',
+    'Le succès n\'est pas final, l\'échec n\'est pas fatal : c\'est le courage de continuer qui compte. - Winston Churchill',
+    'La créativité, c\'est l\'intelligence qui s\'amuse. - Albert Einstein',
+    'Ne jugez pas chaque jour à la récolte que vous faites, mais aux graines que vous plantez. - Robert Louis Stevenson'
+];
+```
