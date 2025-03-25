@@ -290,3 +290,33 @@ Voici le résultat attendu:
 
 ![](images-readme/demo-calculs.gif)
 
+## 7 - Convertisseur de mesures
+
+Dans le fichier `pages/conversion.php`, créez les fonctions suivantes:
+
+* `convertirKgEnLb`, qui prend en paramètre un poids en kilogrammes et retourne le poids en livres correspondant;
+* `convertirLbEnKg`, qui fait l'inverse;
+* `convertirCmEnPouces`, qui prend une taille en centimères et retourne la taille en pouces correspondante;
+* `convertirPoucesEnCm`, qui fait l'inverse.
+
+Faites des recherches sur le Web pour trouver les formules mathématiques à utiliser dans vos fonctions.
+
+Votre objectif est de reproduire la page suivante:
+
+![](images-readme/demo-conversion.gif)
+
+Créez une fonction `afficherFormulaire` pour générer le formulaire.
+
+Il faut valider les champs du formulaire. Pour la validation de la valeur à convertir, on veut accepter les nombres à virgule. Vous pouvez donc créer une nouvelle fonction `validerNombre` qui, contrairement à `validerNombreEntier`, vérifie si la valeur est un nombre, sans vérifier qu'il s'agit d'un nombre entier.
+
+> 🤔 Est-ce que la fonction `validerNombreEntier` pourrait appeler la fonction `validerNombre` ?
+
+Il faut aussi valider que la valeur choisie avec les boutons radio existe. Vous pourriez pour cela ajouter la fonction suivante dans le fichier `fonctions/validation.php`:
+
+```php
+function validerValeurChoix($valeur, $choixPossibles) {
+    return in_array($valeur, $choixPossibles);
+}
+```
+
+Cette fonction prend en paramètre la valeur à valider et un tableau contenant les choix possibles, et retourne `true` si la valeur se trouve parmi ces choix.
