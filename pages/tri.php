@@ -7,9 +7,12 @@ function traiterFormulaire($textarea) {
     $valeurs = [];
     $lignes = explode("\n", $textarea);
     foreach ($lignes as $ligne) {
-        $valeurs[] = (int)$ligne;
+        if (validerNombreEntier($ligne, 0, 1000000)) {
+            $valeurs[] = (int)$ligne;
+        }
     }
-    return asort($valeurs);
+    asort($valeurs);
+    return $valeurs;
 }
 
 if (isset($_POST['valeurs'])) {
@@ -21,4 +24,8 @@ if (isset($_POST['valeurs'])) {
 
 <h1>Tri</h1>
 
-<p>Entrez une valeur par ligne:</p>
+<p>Entrez un nombre entier par ligne:</p>
+<form method="post">
+    <textarea name="valeurs" rows="10" cols="30"><?php echo isset($_POST['valeurs']) ? $_POST['valeurs'] : ''; ?></textarea>
+    <input type="submit" value="Soumettre">
+</form>
