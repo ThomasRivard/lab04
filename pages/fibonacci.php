@@ -1,5 +1,7 @@
 <?php
 
+require_once('fonctions/validation.php');
+
 function afficherFibonacci($nombre) {
     $a = 0;
     $b = 1;
@@ -17,7 +19,7 @@ function afficherFibonacci($nombre) {
 
 function afficherFormulaire($nombreMax, $nombreDefaut) {
 ?>
-    <form method="post" action="?page=fibonacci">
+    <form method="post">
     <label for="nombre">Nombres à afficher:</label>
     <select name="nombre">
     <?php
@@ -37,7 +39,7 @@ function afficherFormulaire($nombreMax, $nombreDefaut) {
 
 <?php
 
-if (isset($_POST['nombre']) && (int)$_POST['nombre'] == $_POST['nombre']) {
+if (isset($_POST['nombre']) && validerNombreEntier($_POST['nombre'], 1, 50)) {
     afficherFibonacci($_POST['nombre']);
 } else {
     afficherFibonacci(10);
