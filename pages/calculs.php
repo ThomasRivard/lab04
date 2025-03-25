@@ -19,7 +19,7 @@ function traiterFormulaire($textarea) {
     $nombres = [];
     $lignes = explode("\n", $textarea);
     foreach ($lignes as $ligne) {
-        $nombres[] = (int)$ligne;
+        $nombres[] = (float)$ligne;
     }
     return $nombres;
 }

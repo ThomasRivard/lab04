@@ -256,3 +256,32 @@ $citations = [
     'Ne jugez pas chaque jour à la récolte que vous faites, mais aux graines que vous plantez. - Robert Louis Stevenson'
 ];
 ```
+
+## 6 - Calculs
+
+Dans le fichier `pages/calculs.php`, commencez par créer une fonction `calculerSomme` qui prend en paramètre un tableau de nombres et retourne la somme de toutes ses valeurs, ainsi qu'une fonction `calculerMoyenne` qui prend en paramètre un tableau de nombres et retourne la moyenne de toutes ses valeurs.
+
+> Note: vous auriez avantage à appeler votre fonction `calculerSomme` dans votre fonction `calculerMoyenne`.
+
+Faites en sorte que la page affiche un formulaire avec un `textarea`. L'utilisateur doit entrer une liste de nombres dans ce `textarea`, en faisant un saut de ligne dans chaque nombre.
+
+Utilisez la fonction suivante pour convertir le contenu du `textarea` en tableau de nombres entiers:
+
+```php
+function traiterFormulaire($textarea) {
+    $nombres = [];
+    $lignes = explode("\n", $textarea);
+    foreach ($lignes as $ligne) {
+        $nombres[] = (float)$ligne;
+    }
+    return $nombres;
+}
+```
+
+Assurez-vous de bien comprendre le code de la fonction `traiterFormulaire`. La fonction `explode`, qu'elle utilise, permet de convertir une chaîne de caractères en tableau de chaînes de caractères en fonction d'un séparateur. Dans le code ci-dessus, le séparateur est `\n`, c'est-à-dire le saut de ligne. Chacune des valeurs qui ont ét.é saisies dans le `textarea` et séparées par des sauts de ligne deviendra donc un élément distinct du tableau `$nombres`.
+
+Passez le résultat de `traiterFormulaire` à vos fonctions `calculerSomme` et `calculerMoyenne` afin d'obtenir la somme et la moyenne des nombres saisis.
+
+Voici le résultat attendu:
+
+![](images-readme/demo-calculs.gif)
