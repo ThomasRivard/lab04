@@ -337,10 +337,13 @@ Voici le résultat attendu:
 
 ![](images-readme/demo-nombres-aleatoires.gif)
 
+## 9 - Filtre
+
+
+
 ## Suite du laboratoire
 
 Consignes à venir pour les étapes restantes du laboratoire:
 
-* 9 - Filtre
 * 10 - Tri
 * 11 - Calendrier
