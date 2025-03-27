@@ -272,7 +272,7 @@ Faites en sorte que la page affiche un formulaire avec un `textarea`. L'utilisat
 Utilisez la fonction suivante pour convertir le contenu du `textarea` en tableau de nombres entiers:
 
 ```php
-function traiterFormulaire($textarea) {
+function traiterTextArea($textarea) {
     $nombres = [];
     $lignes = explode("\n", $textarea);
     foreach ($lignes as $ligne) {
@@ -282,9 +282,9 @@ function traiterFormulaire($textarea) {
 }
 ```
 
-Assurez-vous de bien comprendre le code de la fonction `traiterFormulaire`. La fonction `explode`, qu'elle utilise, permet de convertir une chaîne de caractères en tableau de chaînes de caractères en fonction d'un séparateur. Dans le code ci-dessus, le séparateur est `\n`, c'est-à-dire le saut de ligne. Chacune des valeurs qui ont été saisies dans le `textarea` et séparées par des sauts de ligne deviendra donc un élément distinct du tableau `$nombres`.
+Assurez-vous de bien comprendre le code de la fonction `traiterTextArea`. La fonction `explode`, qu'elle utilise, permet de convertir une chaîne de caractères en tableau de chaînes de caractères en fonction d'un séparateur. Dans le code ci-dessus, le séparateur est `\n`, c'est-à-dire le saut de ligne. Chacune des valeurs qui ont été saisies dans le `textarea` et séparées par des sauts de ligne deviendra donc un élément distinct du tableau `$nombres`.
 
-Passez le résultat de `traiterFormulaire` à vos fonctions `calculerSomme` et `calculerMoyenne` afin d'obtenir la somme et la moyenne des nombres saisis.
+Passez le résultat de `traiterTextArea` à vos fonctions `calculerSomme` et `calculerMoyenne` afin d'obtenir la somme et la moyenne des nombres saisis.
 
 Voici le résultat attendu:
 
@@ -339,13 +339,29 @@ Voici le résultat attendu:
 
 ## 9 - Filtre
 
-Dans le fichier `pages/filtre.php`, créez les cinq fonctions suivantes:
+Dans le fichier `pages/filtre.php`, vous devez reproduire le comportement suivant:
+
+![](images-readme/demo-filtre.gif)
+
+Pour ce faire, commencez par créer les cinq fonctions suivantes:
 
 * `filtrerModulo`
 * `filtrerPair`
 * `filtrerImpair`
 * `traiterTextArea`
 * `traiterFormulaire`
+
+La fonction `filtrerModulo` prend trois paramètres: `$nombres`, `$modulo` et `$resultatModulo`. Elle retourne un nouveau tableau contenant uniquement les valeurs de `$nombres` dont le résultat du modulo par `$modulo` est `$resultatModulo`. Par exemple, si `$modulo` est 4 et que `$resultatModulo` est 3, seuls les nombres dont la valeur modulo 4 est égale à 3 seront retournés.
+
+La fonction `filtrerPair` utilise la fonction `filtrerModulo`. Elle reçoit  un tableau de nombres et retourne seulement les valeurs paires de ce tableau.
+
+La fonction `filtrerImpair` utilise aussi la fonction `filtrerModulo`. Elle reçoit un tableau de nombres et retourne seulement les valeurs impaires de ce tableau.
+
+La fonction `traiterTextArea` est la même qu'à l'étape **6 - Calculs**, à l'exception qu'elle convertit les valeurs en `int` plutôt qu'en `float`.
+
+La fonction `traiterFormulaire`, pour sa part, appelle `traiterTextArea` pour obtenir le tableau de nombres, puis appelle la bonne fonction pour filtrer le contenu du tableau selon que le bouton radio **Pair** ou **Impair** est sélectionné. Elle retourne le tableau filtré.
+
+Complétez le code en utilisant vos fonctions pour obtenir le résultat attendu. La fonction `afficherListe` codée à l'étape précédente vous sera utile.
 
 ## Suite du laboratoire
 
