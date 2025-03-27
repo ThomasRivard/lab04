@@ -327,6 +327,12 @@ Dans le fichier `pages/nombres-aleatoires.php`, créez une fonction `genererNomb
 
 Vous devez afficher le formulaire suivant:
 
+![](images-readme/formulaire-nombres-aleatoires.png)
+
+Votre code doit appeler votre fonction `genererNombresAleatoires` en lui passant les valeurs des champs du formulaire. 
+
+Vous devez ensuite afficher les nombres aléatoires générées dans une liste `ul`. Pour ce faire, créez une nouvelle fonction `afficherListe` qui prend en paramètre le type de liste (`ul` ou `ol`) et un tableau de valeurs et affiche la liste correspondante. Placez cette fonction dans un nouveau fichier `fonctions/afficherListe.php`. Vous réutiliserez cette fonction dans une étape ultérieure du laboratoire.
+
 ## Suite du laboratoire
 
 Consignes à venir pour les étapes restantes du laboratoire:
