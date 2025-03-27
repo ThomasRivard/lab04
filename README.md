@@ -363,9 +363,8 @@ La fonction `traiterFormulaire`, pour sa part, appelle `traiterTextArea` pour ob
 
 Complétez le code en utilisant vos fonctions pour obtenir le résultat attendu. La fonction `afficherListe` codée à l'étape précédente vous sera utile.
 
-## Suite du laboratoire
+## 10 - Tri
 
-Consignes à venir pour les étapes restantes du laboratoire:
+Utilisez la fonction [asort](https://www.php.net/manual/en/function.asort.php) pour reproduire le comportement suivant dans `pages/tri.php`:
 
-* 10 - Tri
-* 11 - Calendrier
+![](images-readme/demo-tri.gif)
