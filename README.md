@@ -339,7 +339,13 @@ Voici le résultat attendu:
 
 ## 9 - Filtre
 
+Dans le fichier `pages/filtre.php`, créez les cinq fonctions suivantes:
 
+* `filtrerModulo`
+* `filtrerPair`
+* `filtrerImpair`
+* `traiterTextArea`
+* `traiterFormulaire`
 
 ## Suite du laboratoire
 
