@@ -321,11 +321,16 @@ function validerValeurChoix($valeur, $choixPossibles) {
 
 Cette fonction prend en paramètre la valeur à valider et un tableau contenant les choix possibles, et retourne `true` si la valeur se trouve parmi ces choix.
 
+## 8 - Nombres aléatoires
+
+Dans le fichier `pages/nombres-aleatoires.php`, créez une fonction `genererNombreAleatoires`. La fonction doit prendre en paramètres une valeur minimale, une valeur maximale et une quantité. Elle doit retourner un tableau contenant la quantité demandée de nombres générés aléatoirement entre la valeur minimale et la valeur maximale. Pour ce faire, vous aurez besoin de la fonction [rand](https://www.php.net/manual/fr/function.rand.php) de PHP.
+
+Vous devez afficher le formulaire suivant:
+
 ## Suite du laboratoire
 
 Consignes à venir pour les étapes restantes du laboratoire:
 
-* 8 - Nombre aléatoires
 * 9 - Filtre
 * 10 - Tri
 * 11 - Calendrier
