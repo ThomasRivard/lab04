@@ -272,7 +272,7 @@ Faites en sorte que la page affiche un formulaire avec un `textarea`. L'utilisat
 Utilisez la fonction suivante pour convertir le contenu du `textarea` en tableau de nombres entiers:
 
 ```php
-function traiterFormulaire($textarea) {
+function traiterTextArea($textarea) {
     $nombres = [];
     $lignes = explode("\n", $textarea);
     foreach ($lignes as $ligne) {
@@ -282,9 +282,9 @@ function traiterFormulaire($textarea) {
 }
 ```
 
-Assurez-vous de bien comprendre le code de la fonction `traiterFormulaire`. La fonction `explode`, qu'elle utilise, permet de convertir une chaîne de caractères en tableau de chaînes de caractères en fonction d'un séparateur. Dans le code ci-dessus, le séparateur est `\n`, c'est-à-dire le saut de ligne. Chacune des valeurs qui ont été saisies dans le `textarea` et séparées par des sauts de ligne deviendra donc un élément distinct du tableau `$nombres`.
+Assurez-vous de bien comprendre le code de la fonction `traiterTextArea`. La fonction `explode`, qu'elle utilise, permet de convertir une chaîne de caractères en tableau de chaînes de caractères en fonction d'un séparateur. Dans le code ci-dessus, le séparateur est `\n`, c'est-à-dire le saut de ligne. Chacune des valeurs qui ont été saisies dans le `textarea` et séparées par des sauts de ligne deviendra donc un élément distinct du tableau `$nombres`.
 
-Passez le résultat de `traiterFormulaire` à vos fonctions `calculerSomme` et `calculerMoyenne` afin d'obtenir la somme et la moyenne des nombres saisis.
+Passez le résultat de `traiterTextArea` à vos fonctions `calculerSomme` et `calculerMoyenne` afin d'obtenir la somme et la moyenne des nombres saisis.
 
 Voici le résultat attendu:
 
@@ -321,11 +321,89 @@ function validerValeurChoix($valeur, $choixPossibles) {
 
 Cette fonction prend en paramètre la valeur à valider et un tableau contenant les choix possibles, et retourne `true` si la valeur se trouve parmi ces choix.
 
-## Suite du laboratoire
+## 8 - Nombres aléatoires
 
-Consignes à venir pour les étapes restantes du laboratoire:
+Dans le fichier `pages/nombres-aleatoires.php`, créez une fonction `genererNombreAleatoires`. La fonction doit prendre en paramètres une valeur minimale, une valeur maximale et une quantité. Elle doit retourner un tableau contenant la quantité demandée de nombres générés aléatoirement entre la valeur minimale et la valeur maximale. Pour ce faire, vous aurez besoin de la fonction [rand](https://www.php.net/manual/fr/function.rand.php) de PHP.
 
-* 8 - Nombre aléatoires
-* 9 - Filtre
-* 10 - Tri
-* 11 - Calendrier
+Vous devez afficher le formulaire suivant:
+
+![](images-readme/formulaire-nombres-aleatoires.png)
+
+Votre code doit appeler votre fonction `genererNombresAleatoires` en lui passant les valeurs des champs du formulaire. 
+
+Vous devez ensuite afficher les nombres aléatoires générées dans une liste `ul`. Pour ce faire, créez une nouvelle fonction `afficherListe` qui prend en paramètre le type de liste (`ul` ou `ol`) et un tableau de valeurs et affiche la liste correspondante. Placez cette fonction dans un nouveau fichier `fonctions/afficherListe.php`. Vous réutiliserez cette fonction dans une étape ultérieure du laboratoire.
+
+Voici le résultat attendu:
+
+![](images-readme/demo-nombres-aleatoires.gif)
+
+## 9 - Filtre
+
+Dans le fichier `pages/filtre.php`, vous devez reproduire le comportement suivant:
+
+![](images-readme/demo-filtre.gif)
+
+Pour ce faire, commencez par créer les cinq fonctions suivantes:
+
+* `filtrerModulo`
+* `filtrerPair`
+* `filtrerImpair`
+* `traiterTextArea`
+* `traiterFormulaire`
+
+La fonction `filtrerModulo` prend trois paramètres: `$nombres`, `$modulo` et `$resultatModulo`. Elle retourne un nouveau tableau contenant uniquement les valeurs de `$nombres` dont le résultat du modulo par `$modulo` est `$resultatModulo`. Par exemple, si `$modulo` est 4 et que `$resultatModulo` est 3, seuls les nombres dont la valeur modulo 4 est égale à 3 seront retournés.
+
+La fonction `filtrerPair` utilise la fonction `filtrerModulo`. Elle reçoit  un tableau de nombres et retourne seulement les valeurs paires de ce tableau.
+
+La fonction `filtrerImpair` utilise aussi la fonction `filtrerModulo`. Elle reçoit un tableau de nombres et retourne seulement les valeurs impaires de ce tableau.
+
+La fonction `traiterTextArea` est la même qu'à l'étape **6 - Calculs**, à l'exception qu'elle convertit les valeurs en `int` plutôt qu'en `float`.
+
+La fonction `traiterFormulaire`, pour sa part, appelle `traiterTextArea` pour obtenir le tableau de nombres, puis appelle la bonne fonction pour filtrer le contenu du tableau selon que le bouton radio **Pair** ou **Impair** est sélectionné. Elle retourne le tableau filtré.
+
+Complétez le code en utilisant vos fonctions pour obtenir le résultat attendu. La fonction `afficherListe` codée à l'étape précédente vous sera utile.
+
+## 10 - Tri
+
+Utilisez la fonction [asort](https://www.php.net/manual/en/function.asort.php) pour reproduire le comportement suivant dans `pages/tri.php`:
+
+![](images-readme/demo-tri.gif)
+
+## 11 - Calendrier
+
+Voici un petit défi pour finir!
+
+Votre mission, si vous l'acceptez, est de reproduire la page suivante qui affiche un calendrier:
+
+![](images-readme/demo-calendrier.gif)
+
+Par défaut, le calendrier du mois courant doit être affiché.
+
+Vous devez créer une fonction `construireCalendrier` qui retourne une chaîne de caractères permettant d'afficher le calendrier. Voici des exemples d'appels de fonctions de PHP qui vous seront utiles pour créer votre fonction:
+
+```php
+// Obtenir le nombre de jours du mois de mars 2025
+$nbJours = cal_days_in_month(CAL_GREGORIAN, 3, 2025);
+
+// Obtenir le jour de la semaine du premier jour du mois spécifié (0 = dimanche, 6 = samedi)
+$premierJour = date("w", mktime(0, 0, 0, $mois, 1, $annee));
+
+// Obtenir le jour de la semaine du dernier jour du mois spécifié (0 = dimanche, 6 = samedi)
+$dernierJour = date("w", mktime(0, 0, 0, $mois, $nbJours, $annee));
+```
+
+Voici comment obtenir le numéro du mois courant:
+
+```php
+$mois = date('n');
+```
+
+Voici comment obtenir l'année courante:
+
+```php
+$annee = date('Y');
+```
+
+> SUGGESTION: armez-vous d'un papier et d'un crayon pour penser votre logique avant d'essayer de coder votre fonction `construireCalendrier`.
+
+Bonne chance!
