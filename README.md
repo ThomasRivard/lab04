@@ -333,6 +333,10 @@ Votre code doit appeler votre fonction `genererNombresAleatoires` en lui passant
 
 Vous devez ensuite afficher les nombres aléatoires générées dans une liste `ul`. Pour ce faire, créez une nouvelle fonction `afficherListe` qui prend en paramètre le type de liste (`ul` ou `ol`) et un tableau de valeurs et affiche la liste correspondante. Placez cette fonction dans un nouveau fichier `fonctions/afficherListe.php`. Vous réutiliserez cette fonction dans une étape ultérieure du laboratoire.
 
+Voici le résultat attendu:
+
+![](images-readme/demo-nombres-aleatoires.gif)
+
 ## Suite du laboratoire
 
 Consignes à venir pour les étapes restantes du laboratoire:
