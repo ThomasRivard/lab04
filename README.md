@@ -377,11 +377,33 @@ Votre mission, si vous l'acceptez, est de reproduire la page suivante qui affich
 
 ![](images-readme/demo-calendrier.gif)
 
-Le calendrier doit charger le mois courant par défaut.
+Par défaut, le calendrier du mois courant doit être affiché.
 
-Voici des exemples d'appels de fonctions de PHP qui vous seront utiles pour créer votre calendrier:
+Vous devez créer une fonction `construireCalendrier` qui retourne une chaîne de caractères permettant d'afficher le calendrier. Voici des exemples d'appels de fonctions de PHP qui vous seront utiles pour créer votre fonction:
 
 ```php
+// Obtenir le nombre de jours du mois de mars 2025
+$nbJours = cal_days_in_month(CAL_GREGORIAN, 3, 2025);
 
+// Obtenir le jour de la semaine du premier jour du mois spécifié (0 = dimanche, 6 = samedi)
+$premierJour = date("w", mktime(0, 0, 0, $mois, 1, $annee));
+
+// Obtenir le jour de la semaine du dernier jour du mois spécifié (0 = dimanche, 6 = samedi)
+$dernierJour = date("w", mktime(0, 0, 0, $mois, $nbJours, $annee));
 ```
 
+Voici comment obtenir le numéro du mois courant:
+
+```php
+$mois = date('n');
+```
+
+Voici comment obtenir l'année courante:
+
+```php
+$annee = date('Y');
+```
+
+> SUGGESTION: armez-vous d'un papier et d'un crayon pour penser votre logique avant d'essayer de coder votre fonction `construireCalendrier`.
+
+Bonne chance!
