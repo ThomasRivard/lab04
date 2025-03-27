@@ -371,4 +371,17 @@ Utilisez la fonction [asort](https://www.php.net/manual/en/function.asort.php) p
 
 ## 11 - Calendrier
 
+Voici un petit défi pour finir!
+
+Votre mission, si vous l'acceptez, est de reproduire la page suivante qui affiche un calendrier:
+
+![](images-readme/demo-calendrier.gif)
+
+Le calendrier doit charger le mois courant par défaut.
+
+Voici des exemples d'appels de fonctions de PHP qui vous seront utiles pour créer votre calendrier:
+
+```php
+
+```
 
