@@ -20,6 +20,7 @@ if (isset($_GET['deconnecter'])) {
     <link rel="stylesheet" href="water.css">
 </head>
 <body>
+<h1>Laboratoire 04</h1>
     <?php
 
     if (estAuthentifie()) {
@@ -40,7 +41,6 @@ if (isset($_GET['deconnecter'])) {
         /****** AJOUTEZ LE SWITCH CI-DESSOUS *******/
         
     } else {
-        echo '<h1>Laboratoire 04</h1>';
         afficherMenu();
     }
 
